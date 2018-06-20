@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <script src="js/readjson.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div class="left-side">
+
+      <div class="info">
+        <div class="photo">
+          <img id="user-pic" src="" alt="photo">
+        </div>
+
+        <div class="name-bar">
+          <h1 id="firstname" class="name-line">firstname</h2>
+          <h1 id="surname" class="name-line">surname</h2>
+        </div>
+
+        <h3 class="topic">Profile</h3>
+        <div class="profile-bar">
+          <p id='profile-info'></p>
+        </div>
+
+        <h3 class="topic">Contact</h3>
+        <div class="contact-bar">
+          <div id="address" class="contact-element"></div>
+          <div id="telephone" class="contact-element"></div>
+          <div id="email" class="contact-element"></div>
+          <div id="birth" class="contact-element"></div>
+        </div>
+
+        <h3 class="topic">Skills</h3>
+        <div class="skills-bar"></div>
+      </div>
+
+      <div class="file-pick">
+        <label class="file-upload">
+          <input type="file" onchange="openFile(event)"/>
+          Upload
+        </label>
+        <!-- <input type="button" name="" value=""> -->
+      </div>
+
+
+    </div>
+
+
+
+    <div class="right-side">
+
+      <h3 class="topic bar">Experience</h3>
+      <div class="experience-bar"></div>
+
+      <h3 class="topic bar">Education & courses</h3>
+      <div class="education-and-coureses-bar">
+          <div class="education"></div>
+          <div class="courses"></div>
+      </div>
+
+      <div class="knowledge-bar">
+        <div class="languages">
+          <h3 class="topic knowledge-h3">Languages</h3>
+          <div class="languages-list"></div>
+        </div>
+
+        <div class="computer">
+          <h3 class="topic knowledge-h3">Computer</h3>
+          <div class="computer-list"></div>
+        </div>
+      </div>
+
+      <h3 class="topic bar">Personal interests</h3>
+      <div class="interests-bar"></div>
+
+    </div>
+
+  </body>
+</html>

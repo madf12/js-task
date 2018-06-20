@@ -1,0 +1,66 @@
+{
+"photoUrl": "",
+"name": "John",
+"surname": "Doe",
+"profile": "Some profile description here",
+"contact": {
+"address": "Unnamed street, 11, 11",
+"telephone": "+375291112233",
+"email": "​john.doe@mail.com​",
+"birthDate": "01/01/1994"
+},
+"skills": [
+  {"skill": "JavaScript",
+   "value": 42
+  },
+  {"skill": "HTML",
+   "value": 33
+  },
+  {"skill": "CSS",
+   "value": 11
+  }
+],
+"experience": [
+{
+"jobTitle": "Junior PHP developer",
+"yearsOfWork": "2015-2017",
+"description": "some description"
+},
+{
+"jobTitle": "Middle JS developer",
+"yearsOfWork": "2017-till now",
+"description": "some description"
+}
+],
+"educationAndCourses": {
+  "education": [
+  { "educatonName": "Software Information Systems",
+    "duration": "2012-2017",
+    "location": "Brest state technical university",
+    "description": "Some description" }
+  ],
+  "course":[
+    { "courseName": "The Rolling Scopes Front-end course",
+      "duration": "2015",
+      "location": "Brest state technical university",
+      "description": "Some description" }
+  ]
+},
+"computer": [
+  {
+  "programm": "MS Office",
+  "level": "Excelent"
+  },
+  {
+  "programm": "Photoshop",
+  "level": "Perfect"
+  }
+],
+"languages": [
+{
+"name": "English",
+"level": "B1"
+}
+],
+"personalInterests": ["football", "dancing"]
+}

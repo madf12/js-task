@@ -81,7 +81,8 @@ input[type="file"] {
   letter-spacing: 5px;
   font-family: Arial;
 }
-.skills-bar {
+
+.skills-bar, .contact-bar {
   width: 70%;
 }
 .skill-item {

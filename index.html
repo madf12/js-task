@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <script src="js/readjson.js" type="text/javascript"></script>
@@ -13,7 +14,8 @@
 
       <div class="info">
         <div class="photo">
-          <img id="user-pic" src="" alt="photo">
+          <img id="user-pic" src="" alt="photo" onerror="this.style.display='none'; document.querySelector('#imageError').style.display = 'block'">
+          <span id='imageError' style="display: none;">Photo not found</span>
         </div>
 
         <div class="name-bar">
@@ -40,10 +42,12 @@
 
       <div class="file-pick">
         <label class="file-upload">
-          <input type="file" onchange="openFile(event)"/>
+          <input type="file" accept=".json" onchange="openFile(event)"/>
           Upload
         </label>
-        <!-- <input type="button" name="" value=""> -->
+        <div class="">
+          <button id='testData' onclick="useTestData()"> Use test data
+        </div>
       </div>
 
 

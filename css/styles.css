@@ -9,9 +9,6 @@ body {
 }
 
 .left-side {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
   width: 30%;
   height: 100%;
   background-color: rgb(60, 69, 70);
@@ -28,9 +25,8 @@ body {
 
 .file-pick {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  /* height: 10%; */
+  justify-content: center;
   margin: 5%;
 }
 
@@ -43,18 +39,37 @@ input[type="file"] {
   color: #b6b6b6;
   display: inline-block;
   padding: 6px;
-  width: 80%;
+  width: 40%;
   cursor: pointer;
+}
+#testData {
+  border: 1px solid #b6b6b6;
+  margin-left: 10px;
+  padding: 6px;
+  background-color: inherit;
+  color: #b6b6b6;
 }
 
 
 .photo {
   margin: 5% 0 5%;
+  width: 12.5vw;
+  height: 12.5vw;
+  border-radius: 50%;
+  background-color: rgb(87, 98, 99);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .photo > img {
-  height: 128px;
-  width: 128px;
-  border-radius: 64px;
+  width: 12vw;
+  height: 12vw;
+  /* border-radius: inherit; */
+}
+.photo > span {
+  text-align: center;
+  font-size: 2.5vw;
+  color: rgb(212, 212, 212);
 }
 
 .name-line {
@@ -95,7 +110,6 @@ input[type="file"] {
   border: 2px solid;
   width: 80%;
   padding: 5px;
-
   font-weight: 400;
 }
 
@@ -125,7 +139,6 @@ h4, p {
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
 }
 
@@ -143,7 +156,6 @@ h4, p {
 .education-and-coureses-bar {
   flex-direction: row;
   justify-content: space-around;
-
 }
 .education, .courses {
   width: 30%;

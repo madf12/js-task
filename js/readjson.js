@@ -5,24 +5,15 @@ let openFile = (event) => {
   reader.readAsText(input.files[0]);
   reader.onload = () => {
     let data = JSON.parse(reader.result);
-    const {photoUrl, name, surname, profile, contact, skills, experience, educationAndCourses, computer, languages, personalInterests} = data;
-
-    setPhoto(photoUrl);
-    setName(name, surname);
-    setProfileInfo(profile);
-    setContcts(contact);
-    setSkills(skills);
-    setExperience(experience);
-    setEducationAndCourses(educationAndCourses);
-    setComputer(computer);
-    setLanguage(languages);
-    setPersonalInterests(personalInterests);
+    setAllData(data);
   };
 
 }
 
 function setPhoto(url) {
   let photo = document.querySelector('#user-pic');
+  document.querySelector('#imageError').style.display = 'none';
+  photo.style.display = 'flex';
   photo.src = url;
 }
 
@@ -55,6 +46,7 @@ function setContcts(contact) {
 
 function setSkills(skills) {
   let skillsBar = document.querySelector('.skills-bar');
+  skillsBar.innerHTML = '';
 
   for (let {skill, value} of skills) {
     let skillItem = document.createElement('div');
@@ -81,6 +73,8 @@ function setSkills(skills) {
 
 function setExperience(experience) {
   let experienceBar = document.querySelector('.experience-bar');
+  experienceBar.innerHTML = '';
+
   for (let {jobTitle, yearsOfWork, description} of experience) {
     let jobItem = document.createElement('div');
     jobItem.classList.add('job-item');
@@ -107,6 +101,7 @@ function setEducationAndCourses(data) {
   for (let i of Object.keys(data)) {
     let nameBar = (i === 'education') ? '.education' : '.courses';
     let infoBar = document.querySelector(nameBar);
+    infoBar.innerHTML = '';
 
     for (let elem of data[i]) {
       const name = (i === 'education') ? elem.educatonName : elem.courseName;
@@ -136,6 +131,7 @@ function setEducationAndCourses(data) {
 
 function setComputer(data) {
   let computerBar = document.querySelector('.computer-list');
+  computerBar.innerHTML = '';
   for (let {programm, level} of data) {
     let item = document.createElement('p');
     item.innerHTML = `${programm}<span style="font-style: italic; font-weight: 400;"> | ${level}</span>`
@@ -145,16 +141,51 @@ function setComputer(data) {
 }
 
 function setLanguage(data) {
-  let computerBar = document.querySelector('.languages-list');
+  let languageBar = document.querySelector('.languages-list');
+  languageBar.innerHTML = '';
+
   for (let {name, level} of data) {
     let item = document.createElement('p');
     item.innerHTML = `${name}<span style="font-style: italic; font-weight: 400;"> | ${level}</span>`
 
-    computerBar.appendChild(item);
+    languageBar.appendChild(item);
   }
 }
 
 function setPersonalInterests(data) {
   let interestsBar = document.querySelector('.interests-bar');
   interestsBar.innerHTML = data.toString().replace(/,/g, ' | ');
+}
+
+function setAllData (data) {
+  const {photoUrl, name, surname, profile, contact, skills, experience, educationAndCourses, computer, languages, personalInterests} = data;
+  setPhoto(photoUrl);
+  setName(name, surname);
+  setProfileInfo(profile);
+  setContcts(contact);
+  setSkills(skills);
+  setExperience(experience);
+  setEducationAndCourses(educationAndCourses);
+  setComputer(computer);
+  setLanguage(languages);
+  setPersonalInterests(personalInterests);
+}
+
+let testData;
+function useTestData () {
+  if (!testData) {
+    fetch('https://api.github.com/gists/884883a086430d78cd1b5d760ab91440', {method: 'GET'})
+    .then(data => data.json())
+    .then(data => {
+    	for(let file in data.files) {
+        return JSON.parse(data.files[file].content);
+      }
+    }).then(data => {
+      testData = data;
+      setAllData(testData);
+    });
+  } else {
+    setAllData(testData);
+  }
+
 }

@@ -183,6 +183,8 @@ function useTestData () {
     }).then(data => {
       testData = data;
       setAllData(testData);
+    }).catch(e => {
+      console.log(e.message)
     });
   } else {
     setAllData(testData);

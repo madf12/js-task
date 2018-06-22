@@ -1,4 +1,209 @@
 body {
+  width: 100%;
+  font-family: Helvetica, sans-serif;
+  font-size: 2vw;
+}
+
+h4, p {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.left-side {
+  background-color: rgb(60, 69, 70);
+  color: white;
+  box-shadow: 3px 0 10px rgba(60, 69, 70, 0.42);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topic {
+  font-size: 2.3vw;
+  border: 2px solid;
+  width: 80%;
+  font-weight: 400;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.photo {
+  width: 30%;
+  height: 0;
+  padding: 15% 0;
+  margin: 3% 0;
+  border-radius: 50%;
+  background-color: rgb(87, 98, 99);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.photo > img {
+  width: 95%;
+  height: auto;
+  border-radius: 50%;
+}
+.photo > span {
+  text-align: center;
+  font-size: 4vw;
+  color: rgb(212, 212, 212);
+}
+
+.name-bar {
+  /* text-align: center; */
+}
+.name-line {
+  margin: 0;
+}
+.name-line, .topic {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .5vw;
+  font-family: Arial;
+}
+
+.skills-bar, .contact-bar{
+  width: 70%;
+}
+.skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.progress-bar {
+  width: 30%;
+  height: .8vw;
+  border: 1px solid white;
+  background-color: inherite;
+  position: relative;
+}
+.progress-line {
+  display: block;
+  height: 100%;
+  width: 15%;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.experience-bar {
+  text-align: center;
+}
+.item:not(:last-child) {
+  margin-bottom: 12px;
+}
+.item :nth-child(2) {
+  font-style: italic;
+}
+
+.education-and-coureses-bar {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
+.education, .courses {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 40%;
+}
+
+.knowledge-bar {
+  width: 80%;
+}
+.knowledge-h3 {
+  width: 100%;
+}
+p.item {
+  font-weight: bold;
+  text-align: center;
+}
+.interests-bar {
+  font-style: italic;
+  margin-bottom: 1%;
+}
+
+
+.file-pick {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3%;
+  font-size: 2.1vw;
+  /* flex: 10%; */
+}
+
+input[type="file"] {
+  display: none;
+}
+.file-upload {
+  text-align: center;
+  border: 1px solid #b6b6b6;
+  color: #b6b6b6;
+  display: inline-block;
+  padding: 6px;
+  width: 40%;
+  cursor: pointer;
+}
+#testData {
+  border: 1px solid #b6b6b6;
+  margin-left: 10px;
+  padding: 6px;
+  background-color: inherit;
+  color: #b6b6b6;
+  min-width: 17vw;
+}
+
+
+@media screen and (min-width: 768px) {
+  html, body { height: 100%; }
+  body { display: flex; font-size: .9vw;}
+  .left-side { width: 20%; }
+  .info { height: 90%; width: 100%; }
+  .topic { font-size: 1.2vw; }
+  .photo { width: 50%; padding: 25% 0; }
+  .photo > span { font-size: 2vmin;}
+  .progress-bar { height: 0.6vw; width: 50%;}
+
+  .file-pick { font-size: 1vw;}
+  #testData { min-width: 8vw;}
+
+  .right-side { width: 80%; }
+  .knowledge-bar, .languages, .computer  { display: flex; }
+  .knowledge-bar {justify-content: space-between;}
+  .languages, .computer {width: 40%; flex-direction: column; }
+  .languages { align-items: flex-start; }
+  .computer { align-items: flex-end; }
+  .list { width: 100%;   }
+  p.item {text-align: left;}
+  .l-item { padding-left: 1vw; }
+}
+
+
+
+
+
+
+
+/* body {
   display: flex;
   flex-direction: row;
   height: 100%;
@@ -11,7 +216,6 @@ body {
 }
 
 .left-side {
-  /* width: 30%; */
   display:flex;
   flex-direction: column;
   flex: 30%;
@@ -20,7 +224,7 @@ body {
   color: white;
   box-shadow: 3px 0 10px rgba(60, 69, 70, 0.42);
 
-  min-height: 650px;
+  min-height: 550px;
 }
 
 .info {
@@ -62,10 +266,9 @@ input[type="file"] {
 
 .photo {
   margin: 5% 0 5%;
-  width: 40%;
+  width: 32%;
   height: 0;
-  padding: 20% 0;
-  border-radius: 50%;
+  padding: 16% 0;
   border-radius: 50%;
   background-color: rgb(87, 98, 99);
   display: flex;
@@ -149,7 +352,6 @@ h4, p {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* width: 70%; */
   flex: 70%;
   height: 100%;
 }
@@ -221,7 +423,6 @@ h4, p {
       font-size: 1.8vmax;
     }
     .contact-bar {
-      /* align-items: center; */
       width: 50%;
     }
     .left-side, .right-side {
@@ -255,4 +456,4 @@ h4, p {
       text-align: center;
 
     }
-}
+} */

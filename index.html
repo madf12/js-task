@@ -14,7 +14,7 @@
 
       <div class="info">
         <div class="photo">
-          <img id="user-pic" src="" alt="photo" onerror="this.style.display='none'; document.querySelector('#imageError').style.display = 'block'">
+          <img id="user-pic" src="null" alt="photo" onerror="this.style.display='none'; document.querySelector('#imageError').style.display = 'block'">
           <span id='imageError' style="display: none;">Photo not found</span>
         </div>
 
@@ -45,9 +45,7 @@
           <input type="file" accept=".json" onchange="openFile(event)"/>
           Upload
         </label>
-        <div class="">
           <button id='testData' onclick="useTestData()"> Use test data
-        </div>
       </div>
 
 
@@ -69,12 +67,12 @@
       <div class="knowledge-bar">
         <div class="languages">
           <h3 class="topic knowledge-h3">Languages</h3>
-          <div class="languages-list"></div>
+          <div class="languages-list list"></div>
         </div>
 
         <div class="computer">
           <h3 class="topic knowledge-h3">Computer</h3>
-          <div class="computer-list"></div>
+          <div class="computer-list list"></div>
         </div>
       </div>
 

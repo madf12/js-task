@@ -78,7 +78,7 @@ function setExperience(experience) {
   for (let {jobTitle, yearsOfWork, description} of experience) {
     let jobItem = document.createElement('div');
     jobItem.classList.add('job-item');
-    jobItem.classList.add('list');
+    jobItem.classList.add('item');
 
     let headName = document.createElement('h4');
     headName.innerHTML = jobTitle;
@@ -110,6 +110,8 @@ function setEducationAndCourses(data) {
       let item = document.createElement('div');
       // item.classList.add('education-item');
       item.classList.add('item');
+      item.classList.add('l-item');
+
 
       let headName = document.createElement('h4');
       headName.innerHTML = location;
@@ -134,6 +136,9 @@ function setComputer(data) {
   computerBar.innerHTML = '';
   for (let {programm, level} of data) {
     let item = document.createElement('p');
+    item.classList.add('item');
+    item.classList.add('l-item');
+
     item.innerHTML = `${programm}<span style="font-style: italic; font-weight: 400;"> | ${level}</span>`
 
     computerBar.appendChild(item);
@@ -146,6 +151,9 @@ function setLanguage(data) {
 
   for (let {name, level} of data) {
     let item = document.createElement('p');
+    item.classList.add('item');
+    item.classList.add('l-item');
+
     item.innerHTML = `${name}<span style="font-style: italic; font-weight: 400;"> | ${level}</span>`
 
     languageBar.appendChild(item);
